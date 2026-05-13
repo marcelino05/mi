@@ -1,0 +1,98 @@
+.main {
+    background: var(--background);
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_register,
+.form_login {
+    background: var(--surface);
+    width: 420px;
+    min-height: 300px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+p a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+p a:hover {
+    color: var(--primary-hover);
+}
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+.input_group {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.input_group input {
+    width: 100%;
+    padding: 12px 45px 12px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+input:focus {
+    border: 1px solid var(--success);
+}
+
+.input_group:focus-within i {
+    color: var(--success);
+}
+
+.input_group i {
+    position: absolute;
+    font-size: 1.2em;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn_cadastrar {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--surface);
+    background: var(--primary);
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.erro {
+    color: var(--danger);
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.sucesso {
+    color: var(--success);
+    font-size: 1.1em;
+    text-align: center;
+}

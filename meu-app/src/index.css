@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Sans-Serif;
+font-size: 1em;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    background: #f4f4f4;
+}
+
+:root {
+    --primary: #16a34a;
+    --primary-hover: #15803d;
+    --primary-light: #dcfce7;
+
+    --background: #f5f7f8;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #EF4444;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
