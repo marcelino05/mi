@@ -1,0 +1,41 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 20px;
+  z-index: 1000;
+  
+}
+
+.logo {
+  text-align: left;
+}
+
+.nav {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+li:hover {
+  background: var(--primary);
+  color: var(--surface);
+}
+
+.nav li i {
+  font-size: 25px;
+  margin-right: 10px;
+}

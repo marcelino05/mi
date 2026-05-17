@@ -1,25 +1,38 @@
+import Header from "../../components/header/Header.jsx";
+import Sidebar from "../../components/sidebar/Sidebar.jsx";
+import Cards from "../../components/cards/Cards.jsx";
+import Tabela from "../../components/tabela/Tabelas.jsx";
 import "./Dashboard.css";
-import Header from "../../components/Header.jsx";
-import Sindebar from "../../components/Sindebar.jsx";
-import Cards from "../../components/Cards.jsx";
-import Tabela from "../../components/Tabelas.jsx";
 import api from "../../services/api.js";
+import { useState } from "react"
 
 function Dashboard() {
-    return (
-        <div className="container">
-            <Sindebar />
+  const [data, setData] = useState()
 
-            <main className="main">
-                <Header />
+  async function getData() {
+    try {
+const result = await api.get("/")
+    } catch (erro) {
+      console.log(erro?.response?.data?.message)
+    }
+  }
 
-                <section className="content">
-                    <Cards />
-                    <Tabela />
-                </section>
-            </main>
-        </div>
-    );
+
+
+  return (
+    <div className="container">
+      <Sidebar />
+
+      <main className="main">
+        <Header />
+
+        <section className="content">
+          <Cards />
+          <Tabela />
+        </section>
+      </main>
+    </div>
+  );
 }
 
 export default Dashboard;

@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: var(--background);
+  width: 100%;
+  
+}
+
+.header .title {
+  font-size: 1.5em;
+}
+
+.header .profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 20px;
+  border: 2px solid var(--success);
+  font-weight: 600;
+}

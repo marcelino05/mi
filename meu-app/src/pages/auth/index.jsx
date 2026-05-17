@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import api from "../../services/api.js";
 import "./style.css";
 
-function AUTH() {
+function Auth() {
     const [isLogin, setIsLogin] = useState(true);
     const [showPass, setShowPass] = useState(false);
 
     const [erros, setErros] = useState({});
     const [sucesso, setSucesso] = useState("");
+
+    const navigate = useNavigate();
 
     async function registerUser(e) {
         e.preventDefault();
@@ -30,7 +32,6 @@ function AUTH() {
             setSucesso(result?.data?.message || "Usuário criado com sucesso");
 
             form.reset();
-
             setTimeout(() => {
                 setIsLogin(true);
             }, 1500);
@@ -47,7 +48,7 @@ function AUTH() {
 
     async function loginUser(e) {
         e.preventDefault();
-        const navigate = useNavigate();
+
         setErros({});
         setSucesso("");
 
@@ -64,9 +65,11 @@ function AUTH() {
             setSucesso("Login realizado com sucesso");
 
             localStorage.setItem("token", result.data.token);
+
             setTimeout(() => {
                 navigate("/dashboard");
             }, 1500);
+
             form.reset();
         } catch (erro) {
             const mensagem = erro?.response?.data?.message;
@@ -80,12 +83,10 @@ function AUTH() {
     }
 
     return (
-        <main className="main">
+        <main className="main_form">
             {!isLogin ? (
                 <section className="form_register">
-                    <h1>
-                        Minha<span>Turma</span>
-                    </h1>
+                    <h1 className="logo">MinhaTurma</h1>
 
                     <h2>Cadastrar-se</h2>
 
@@ -122,7 +123,7 @@ function AUTH() {
                             Cadastrar
                         </button>
                     </form>
- 
+
                     <p>
                         Já tenho uma conta?{" "}
                         <a
@@ -137,9 +138,8 @@ function AUTH() {
                 </section>
             ) : (
                 <section className="form_login">
-                    <h1>
-                        Minha<span>Turma</span>
-                    </h1>
+                    <h1 className="logo">MinhaTurma</h1>
+                    
 
                     <h2>Entrar</h2>
 
@@ -186,4 +186,4 @@ function AUTH() {
     );
 }
 
-export default AUTH;
+export default Auth;

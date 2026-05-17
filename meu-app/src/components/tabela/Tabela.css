@@ -1,0 +1,41 @@
+.table {
+  width: 100%;
+  background: var(--surface);
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+thead {
+  background: var(--text-secondary);
+  color: var(--surface);
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 1em;
+}
+
+td {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+tbody tr:hover {
+  background: var(--background);
+}
+
+.pago {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.naoPago {
+  color: var(--error);
+  font-weight: 500;
+}
