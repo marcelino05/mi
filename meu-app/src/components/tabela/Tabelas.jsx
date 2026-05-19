@@ -1,6 +1,7 @@
 import "./Tabela.css";
 
-function Tabela() {
+function Tabela({ table }) {
+  
   return (
     <table className="table">
       <thead>
@@ -14,41 +15,19 @@ function Tabela() {
       </thead>
 
       <tbody>
-        <tr>
-          <td>Marla</td>
-          <td>12ª</td>
-          <td>Julho</td>
-          <td>450MT</td>
-          <td className="pago">Pago</td>
-        </tr>
-        <tr>
-          <td>Ebeneser</td>
-          <td>5ª</td>
-          <td>Agosto</td>
-          <td>450MT</td>
-          <td className="pago">Pago</td>
-        </tr>
-        <tr>
-          <td>Omenadiel</td>
-          <td>10ª</td>
-          <td>Abril</td>
-          <td>450MT</td>
-          <td className="pago">Pago</td>
-        </tr>
-        <tr>
-          <td>Sarai</td>
-          <td>12ª</td>
-          <td>Maio</td>
-          <td>450MT</td>
-          <td className="naoPago">Não pago</td>
-        </tr>
-        <tr>
-          <td>Marcelino</td>
-          <td>12ª</td>
-          <td>Março</td>
-          <td>450MT</td>
-          <td className="naoPago">Não pago</td>
-        </tr>
+        {table.map((aluno) => (
+          <tr key={aluno.id}>
+            <td>{aluno.nome}</td>
+            <td>{aluno.classe}ª Classe</td>
+            <td>{aluno.mes}</td>
+            <td>{aluno.valor}</td>
+            <td>
+              <span className={aluno.pago ? "pago" : "pendente"}>
+                {aluno.pago ? "Pago" : "Pendente"}
+              </span>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

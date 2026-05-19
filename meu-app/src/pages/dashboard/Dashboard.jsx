@@ -1,23 +1,48 @@
+import api from "../../services/api.js";
+import "./Dashboard.css";
+
+// COMPONENTES
 import Header from "../../components/header/Header.jsx";
 import Sidebar from "../../components/sidebar/Sidebar.jsx";
 import Cards from "../../components/cards/Cards.jsx";
 import Tabela from "../../components/tabela/Tabelas.jsx";
-import "./Dashboard.css";
-import api from "../../services/api.js";
-import { useState } from "react"
+
+import { useState, useRef, useEffect } from "react";
 
 function Dashboard() {
-  const [data, setData] = useState()
+  const [dashboard, setDashboard] = useState({});
+  const [table, setTable] = useState([]);
 
-  async function getData() {
+  const buscarDashboard = async () => {
     try {
-const result = await api.get("/")
+      const result = await api.get("/dashboard");
+      setDashboard(result.data);
     } catch (erro) {
-      console.log(erro?.response?.data?.message)
+      console.log(erro?.response?.data?.message || erro.message);
+
     }
-  }
+  };
 
+  const buscarTabela = async () => {
+    try {
+      const dataTable = await api.get("/alunos");
+      setTable(dataTable.data.data);
 
+    } catch (erro) {
+      console.log(erro?.response?.data?.message || erro.message);
+
+    }
+  };
+
+  const carregou = useRef(false)
+
+  useEffect(() => {
+    if (carregou.current) return
+    carregou.current = true
+
+    buscarDashboard();
+    buscarTabela();
+  }, []);
 
   return (
     <div className="container">
@@ -27,8 +52,8 @@ const result = await api.get("/")
         <Header />
 
         <section className="content">
-          <Cards />
-          <Tabela />
+          <Cards dashboard={dashboard} />
+          <Tabela table={table} />
         </section>
       </main>
     </div>

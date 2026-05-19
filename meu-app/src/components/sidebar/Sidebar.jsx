@@ -1,28 +1,46 @@
 import "./Sidebar.css";
 
 function Sidebar() {
-    return (
-        <aside className="sidebar">
-            <h1 className="logo">MinhaTurma</h1>
-            <nav className="nav">
-                <ul>
-                    <li>
-                        <i className="bi bi-speedometer2"></i>
-                        Dashboard
-                    </li>
+  const logOut = () => {
+    localStorage.removeItem("token")
+    window.location.href = "/"
+  }
 
-                    <li>
-                        <i className="bi bi-people"></i>Alunos
-                    </li>
-                    <li>
-                        <i className="bi bi-cash-stack"></i>Cobranças
-                    </li>
-                    <li>
-                        <i className="bi bi-person"></i>Perfil
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-    );
+  return (
+    <aside className="sidebar">
+      <h1 className="logo">MinhaTurma</h1>
+      <hr />
+
+      <nav className="nav">
+        <ul>
+          <li>
+            <i className="bi bi-graph-up-arrow"></i>
+            <span>Dashboard</span>
+          </li>
+
+          <li>
+            <i className="bi bi-people"></i>
+            <span>Alunos</span>
+          </li>
+
+          <li>
+            <i className="bi bi-cash-stack"></i>
+            <span>Pagamento</span>
+          </li>
+
+          <li>
+            <i className="bi bi-person-circle"></i>
+            <span>Perfil</span>
+          </li>
+
+          <li>
+            <i className="bi bi-box-arrow-right"></i>
+            <span onClick={logOut}>Sair</span>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  );
 }
 export default Sidebar;
