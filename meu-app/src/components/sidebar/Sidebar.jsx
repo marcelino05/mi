@@ -1,4 +1,5 @@
 import "./Sidebar.css";
+import { Link } from "react-router-dom"
 
 function Sidebar() {
   const logOut = () => {
@@ -14,23 +15,31 @@ function Sidebar() {
       <nav className="nav">
         <ul>
           <li>
-            <i className="bi bi-graph-up-arrow"></i>
-            <span>Dashboard</span>
+            <Link to="/dashboard" className="link">
+              <i className="bi bi-graph-up-arrow"></i>
+              <span>Dashboard</span>
+            </Link>
           </li>
 
           <li>
-            <i className="bi bi-people"></i>
-            <span>Alunos</span>
+            <Link to="/alunos" className="link">
+              <i className="bi bi-people"></i>
+              <span>Alunos</span>
+            </Link>
           </li>
 
           <li>
-            <i className="bi bi-cash-stack"></i>
-            <span>Pagamento</span>
+            <Link to="pagamento" className="link">
+              <i className="bi bi-cash-stack"></i>
+              <span>Pagamento</span>
+            </Link>
           </li>
 
           <li>
-            <i className="bi bi-person-circle"></i>
-            <span>Perfil</span>
+            <Link to="perfil" className="link">
+              <i className="bi bi-person-circle"></i>
+              <span>Perfil</span>
+            </Link>
           </li>
 
           <li>

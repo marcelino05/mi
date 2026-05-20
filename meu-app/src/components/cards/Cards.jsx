@@ -1,6 +1,7 @@
 import "./Cards.css";
 
 function Cards({ dashboard }) {
+  console.log(dashboard)
   return (
     <div className="cards">
 

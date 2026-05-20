@@ -1,6 +1,6 @@
-function Tabela({ alunos }) {
+function Tabela() {
   return (
-    <table className="aluno_table">
+    <table className="table">
       <thead>
         <tr>
           <th>Nome</th>
@@ -10,13 +10,11 @@ function Tabela({ alunos }) {
       </thead>
 
       <tbody>
-        {alunos.map((aluno) => (
-          <tr key={aluno.id}>
-            <td>{aluno.nome}</td>
-            <td>{aluno.classe}ª Classe</td>
-            <td>{aluno.disciplina}</td>
-          </tr>
-        ))}
+        <tr >
+          <td>Namoel</td>
+          <td>12ª Classe</td>
+          <td>Português</td>
+        </tr>
       </tbody>
     </table>
   );

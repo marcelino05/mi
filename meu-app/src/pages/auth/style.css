@@ -102,7 +102,7 @@
   }
   
   .erro {
-    color: var(--danger);
+    color: red;
     font-size: 1.1em;
     text-align: center;
     
